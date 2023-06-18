@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Everyday Zen - the Book</title>
+    <link href="styles.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
+    <style>
+      section {
+        padding: 60px 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!--The structure is: 
+          NAV
+          SECTION
+          SECTION
+          FOOTER
+        -->
+
+    <!-- Have a look at the TOGGLER section in https://getbootstrap.com/docs/5.2/components/navbar/#responsive-behaviors for more indications about this NAVBAR-->
+
+    <!-- NAVBAR. 'navbar-expand-md' tells you to expand when it's half screen size and goes bigger, then hamburger icon disappears. href="#intro" goes to the image and intro section below, with id 'intro'  -->
+    <nav class="navbar navbar-expand-lg navbar-light pt-5 pb-4 ps-3">
+      <div class="container-xl">
+        <!--'navbar-expand-lg' tells you that the hamburger appears already when screen large-->
+        <!--'container-xxl' is 100% until the page gets very big (1320px onwards it gets a margin)-->
+        <!-- navbar brand / title: -->
+        <a class="navbar-brand" href="#intro">
+          <span class="text-secondary fw-bold">
+            <img
+              src="assets/lotoflower.png"
+              alt="lotoFlower"
+              style="height: 50px; padding-bottom: 6px"
+            />
+            Everyday Zen
+          </span>
+        </a>
+        <!-- toggle button for mobile nav: -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-nav"
+          aria-controls="main-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+          <!--The Hamburger icon-->
+        </button>
+
+        <!-- NAVBAR LINKS. The menu links must have tag 'collapse' for the 'data-bs-toggle' attribute y and an id 'main-nav' for the 'data-bs-target' attribute-->
+        <div
+          class="collapse navbar-collapse justify-content-end align-center"
+          id="main-nav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item me-3">
+              <a class="nav-link" href="#topics">ABOUT THE BOOK</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link" href="#reviews">REVIEWS</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link" href="#contact">GET IN TOUCH</a>
+            </li>
+            <li class="nav-item d-md-none">
+              <!--It appears when menu collapsed, but from md to lg onwards it disappears-->
+              <a class="nav-link" href="#pricing">PRICING</a>
+            </li>
+            <li class="nav-item ms-2 d-none d-md-inline">
+              <!--'d-none' tells you that when menu collapsed it doesn't appear. But when extended from md to lg and onwards, it appears-->
+              <a class="btn btn-outline-primary" href="#pricing">BUY NOW</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- main image & intro text -->
+    <section id="intro">
+      <div class="container-lg">
+        <!--'container-lg' is 100% until the page gets big (960px onwards it has a margin)-->
+        <div class="row justify-content-center align-items-center mb-4">
+          <div class="col-md-5 text-center text-md-start">
+            <!--col without specifying anything, it's taking its proportional part of a total of 12 columns. If there are 2 columns, then it's 6, but it says that when page gets md until bigger, it takes just 5-->
+            <!--when page is small, text center, but when it gets from mid size to big, it's text-start-->
+            <h1>
+              <div class="display-3 mb-3">Learn how to live everyday</div>
+              <div class="display-6 text-muted">with Charlotte Joko Beck</div>
+            </h1>
+            <p class="lead my-4 text-muted">
+              'Everyday Zen' offers a warm, engaging, uniquely Western approach
+              to using Zen to deal with the problems of ordinary daily living.
+            </p>
+            <a href="#pricing" class="btn btn-outline-primary btn-lg"
+              >Buy Now</a
+            >
+            <!--open sidebar / offcanvas-->
+            <a
+              href="#sidebar"
+              class="d-block mt-4"
+              style="text-decoration: none"
+              data-bs-toggle="offcanvas"
+              role="button"
+              aria-controls="sidebar"
+              ><p>Explore other books</p></a
+            >
+            <a
+              href="#sidebar2"
+              class="d-block mt-4"
+              style="text-decoration: none"
+              data-bs-toggle="offcanvas"
+              role="button"
+              aria-controls="sidebar"
+              ><p>Learn more about the author</p></a
+            >
+          </div>
+
+          <div class="col-md-5 text-center">
+            <!--with 'd-none d-md-block' the pic of the book doesn't appear if page small, but it does when the page is md and goes bigger-->
+
+            <!--TOOLTIP-->
+            <span
+              class="tt"
+              data-bs-placement="bottom"
+              title="Everyday Zen with Charlotte Joko Beck"
+              data-bs-toggle="tooltip"
+            >
+              <img
+                class="img-fluid"
+                src="assets/cover.jpg"
+                alt="ebook cover"
+              /><!--Images in Bootstrap are made responsive with .img-fluid. This applies max-width: 100%; and height: auto; to the image so that it scales with the parent element.-->
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- pricing plans-->
+
+    <section id="pricing" class="bg-altlight mt-4">
+      <div class="container-lg">
+        <div class="text-center">
+          <a href="#" style="text-decoration: none"
+            ><h2 class="display-4 text-dark">Pricing Plans</h2></a
+          >
+          <p class="lead">Choose a pricing plan to suit you.</p>
+        </div>
+      </div>
+
+      <div class="row my-5 align-items-center justify-content-center g-0">
+        <!--'g-0' is gap 0, so it removes spaces between columns-->
+        <div class="col-8 col-lg-4 col-xl-3">
+          <div class="card border-0">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">Older Edition</h4>
+              <p class="lead card-subtitle">Paperback only</p>
+              <p class="display-5 my-4 text-primary fw-bold">$5,07</p>
+              <p class="card-text mx-5 text-muted d-none d-lg-block">
+                Everyday Zen: Love and Work. Edition from 17 diciembre 1996.
+                Plain first edition without insights and interviews by the
+                author.
+              </p>
+              <a
+                href="https://www.amazon.es/Everyday-Zen-Charlotte-Joko-Beck/dp/0722534353/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr="
+                class="btn btn-outline-primary btn-lg mt-3"
+                target="_blank"
+                >Buy Now</a
+              >
+              <!--href="#" doesn't specify an id name, but does have a corresponding location - the top of the page. Clicking an anchor with href="#" will move the scroll position to the top.-->
+            </div>
+          </div>
+        </div>
+
+        <div class="col-9 col-lg-4">
+          <div class="card border-primary border-2">
+            <div class="card-header text-center fw-bold bg-primary text-light">
+              Most Popular
+            </div>
+            <!--Don't confuse 'header' and 'title'-->
+            <div class="card-body text-center py-5">
+              <!--This card has more padding so it gets higher-->
+              <h4 class="card-title">New Edition</h4>
+              <p class="lead card-subtitle">Ebook only</p>
+              <p class="display-4 my-4 text-primary fw-bold">$12.99</p>
+              <p class="card-text mx-5 text-muted d-none d-lg-block">
+                Everyday Zen: Love and Work (Plus) Especial edition from 4
+                Septiembre 2007. This Plus edition includes an interview with
+                the author.
+              </p>
+              <a
+                href="https://www.amazon.com/Everyday-Zen-Love-Work-Plus-ebook/dp/B001VA1PTI/ref=tmm_kin_swatch_0?_encoding=UTF8&qid=&sr="
+                class="btn btn-outline-primary btn-lg mt-3"
+                target="_blank"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="col-8 col-lg-4 col-xl-3">
+          <div class="card border-0">
+            <div class="card-body text-center py-4">
+              <h4 class="card-title">Ultimate Pack</h4>
+              <p class="lead card-subtitle">Paperback and Ebook</p>
+              <p class="display-5 my-4 text-primary fw-bold">$29.98</p>
+              <p class="card-text mx-5 text-muted d-none d-lg-block">
+                Everyday Zen: Love and Work (Plus) Especial edition from 4
+                Septiembre 2007. Also includes an interview with the author.
+              </p>
+              <a
+                href="https://www.amazon.com/Everyday-Zen-Love-Work-Plus/dp/0061285897/ref=tmm_pap_swatch_0?_encoding=UTF8&qid=&sr="
+                class="btn btn-outline-primary btn-lg mt-3"
+                target="_blank"
+                >Buy Now</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- topics at a glance -->
+    <section id="topics">
+      <div class="container-md">
+        <div class="text-center">
+          <a href="#" style="text-decoration: none"
+            ><h2 class="display-4 text-dark">Inside the Book...</h2></a
+          >
+          <p class="lead">A quick glance at the topics you'll learn</p>
+        </div>
+
+        <div
+          class="row mt-0 mb-5 g-5 justify-content-center align-items-center m-auto"
+        >
+          <div class="col-10 col-lg-4">
+            <!--Remember, that for design reasons, we want the element to occupy the whole width when page is small, but when page gets wider, we want the elements to get smaller and centered -->
+            <img
+              src="assets/sidecover.jpg"
+              alt="ebook"
+              class="img-fluid"
+              style="height: 600px"
+            />
+          </div>
+
+          <!--accordion-->
+          <div class="col-lg-6">
+            <!--When page small and until it gets lg, it is not a column so it stays below the pic-->
+            <div class="accordion" id="chapters">
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-1">
+                  <button
+                    class="accordion-button text-light bg-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chapter-1"
+                    aria-expanded="true"
+                    aria-controls="chapter-1"
+                  >
+                    I. BEGINNINGS
+                  </button>
+                </h2>
+                <div
+                  id="chapter-1"
+                  class="accordion-collapse collapse show"
+                  aria-labelledby="heading-1"
+                  data-bs-parent="#chapters"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Beginning Zen Practice - Practicing This Very Moment -
+                      Authority - The Bottleneck of Fear
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-2">
+                  <button
+                    class="accordion-button collapsed text-light bg-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chapter-2"
+                    aria-expanded="false"
+                    aria-controls="chapter-2"
+                  >
+                    II. PRACTICE
+                  </button>
+                </h2>
+                <div
+                  id="chapter-2"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading-2"
+                  data-bs-parent="#chapters"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      What Practice Is Not - What Practice Is - The Fire of
+                      Attention - Pushing for Enlightenment Experiences - The
+                      Price of Practice - The Reward of Practice
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-3">
+                  <button
+                    class="accordion-button collapsed text-light bg-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chapter-3"
+                    aria-expanded="false"
+                    aria-controls="chapter-1"
+                  >
+                    III. FEELINGS
+                  </button>
+                </h2>
+                <div
+                  id="chapter-3"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading-3"
+                  data-bs-parent="#chapters"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      A Bigger Container - Opening Pandora's Box - "Do Not Be
+                      Angry" - False Fear - No Hope - Love
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-4">
+                  <button
+                    class="accordion-button collapsed text-light bg-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chapter-4"
+                    aria-expanded="false"
+                    aria-controls="chapter-4"
+                  >
+                    IV. RELATIONSHIPS
+                  </button>
+                </h2>
+                <div
+                  id="chapter-4"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading-4"
+                  data-bs-parent="#chapters"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      The Search - Practicing with Relationships - Experiencing
+                      and Behavior - Relationships Don't Work - Relationship Is
+                      Not to Each Other
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-5">
+                  <button
+                    class="accordion-button collapsed text-light bg-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chapter-5"
+                    aria-expanded="false"
+                    aria-controls="chapter-5"
+                  >
+                    V. SUFFERING
+                  </button>
+                </h2>
+                <div
+                  id="chapter-5"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading-5"
+                  data-bs-parent="#chapters"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      True Suffering and False Suffering - Renunciation - It's
+                      OK 114 Tragedy - The Observing Self
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-6">
+                  <button
+                    class="accordion-button collapsed text-light bg-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chapter-6"
+                    aria-expanded="false"
+                    aria-controls="chapter-6"
+                  >
+                    VI. IDEALS
+                  </button>
+                </h2>
+                <div
+                  id="chapter-6"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading-6"
+                  data-bs-parent="#chapters"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Running in Place - Aspiration and Expectation - Seeing
+                      Through the Superstructure - Prisoners of Fear - Great
+                      Expectations
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-7">
+                  <button
+                    class="accordion-button collapsed text-light bg-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chapter-7"
+                    aria-expanded="false"
+                    aria-controls="chapter-7"
+                  >
+                    VII. BOUNDARIES
+                  </button>
+                </h2>
+                <div
+                  id="chapter-7"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading-7"
+                  data-bs-parent="#chapters"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      The Razor's Edge - New Jersey Does Not Exist - Religion -
+                      Enlightenment
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-8">
+                  <button
+                    class="accordion-button collapsed text-light bg-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chapter-8"
+                    aria-expanded="false"
+                    aria-controls="chapter-8"
+                  >
+                    VIII. CHOICES
+                  </button>
+                </h2>
+                <div
+                  id="chapter-8"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading-8"
+                  data-bs-parent="#chapters"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      From Problems to Decisions - Turning Point - Shut the Door
+                      - Commitment
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="heading-8">
+                  <button
+                    class="accordion-button collapsed text-light bg-primary"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#chapter-8"
+                    aria-expanded="false"
+                    aria-controls="chapter-8"
+                  >
+                    IX. SERVICE
+                  </button>
+                </h2>
+                <div
+                  id="chapter-8"
+                  class="accordion-collapse collapse"
+                  aria-labelledby="heading-8"
+                  data-bs-parent="#chapters"
+                >
+                  <div class="accordion-body">
+                    <p>
+                      Thy Will Be Done - No Exchange - The Parable of Mushin
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- reviews list-->
+    <section id="reviews" class="bg-altlight">
+      <div class="container-lg">
+        <div class="text-center">
+          <a href="#" style="text-decoration: none"
+            ><h2 class="display-4 text-dark">Book Reviews</h2></a
+          >
+          <img
+            src="assets/lotoflower.png"
+            alt="lotoFlower"
+            style="height: 80px; padding-bottom: 6px"
+          />
+        </div>
+
+        <div class="row justify-content-center mb-5 mt-4">
+          <!--we only have a column but we want the grid so we can give this column the column feature of being responsive depending on the page size-->
+          <div class="col-lg-8">
+            <!--since we don't specify any col while smaller than lg-8, it will fill 100% width until it gets to lg page and then it will occupy the space of 8 columns out of 12. IMPORTANT for responsive design, large screens and mobiles-->
+            <div class="list-group">
+              <div class="list-group-item py-3">
+                <div class="pb-2 mt-2">
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                </div>
+
+                <p class="lead mt-3 mb-1">
+                  "An extraordinary book for ordinary people. It speaks about
+                  ultimate matters with ultimate simplicity.""
+                </p>
+                <p class="fw-bold">
+                  — Robert Aiktken, Roshi, author of Taking the Path of Zen
+                </p>
+              </div>
+              <div class="list-group-item py-3">
+                <div class="pb-2 mt-2">
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                </div>
+
+                <p class="lead mt-3 mb-1">
+                  "Deals with the most important spiritual practice of all--how
+                  we can live awakened in our daily life."
+                </p>
+                <p class="fw-bold">
+                  — Jack Kornfield, author of A Path with Heart and After the
+                  Ecstasy, the Laundry
+                </p>
+              </div>
+              <div class="list-group-item py-3">
+                <div class="pb-2 mt-2">
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                  <i class="bi bi-star-fill text-primary"></i>
+                </div>
+
+                <p class="lead mt-3 mb-1">
+                  "An extraordinary book for ordinary people. It speaks about
+                  ultimate matters with ultimate simplicity."
+                </p>
+                <p class="fw-bold">
+                  — David Steindl-Rast, O.S.B, author of A Listening Heart
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Form section-->
+    <section id="contact">
+      <div class="container-lg">
+        <div class="text-center">
+          <a href="#" style="text-decoration: none"
+            ><h2 class="display-4 text-dark">Get in touch</h2></a
+          >
+          <p class="lead">Fill in the form to ask your questions...</p>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mt-5 mb-4">
+        <div class="col-11 col-lg-6">
+          <label for="email" class="form-label">Email address:</label>
+          <div class="input-group mb-4">
+            <span class="input-group-text bg-altlight">
+              <i class="bi bi-envelope-fill"></i>
+            </span>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="e.g. helen@example.com"
+            /><!--TOOLTIP-->
+            <span class="input-group-text bg-altlight">
+              <span
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Enter an email address we can contact you"
+              >
+                <i class="bi bi-question-circle"></i>
+              </span>
+            </span>
+          </div>
+
+          <label for="name" class="form-label">Your name:</label>
+          <div class="input-group mb-4">
+            <span class="input-group-text bg-altlight">
+              <i class="bi bi-person-fill"></i>
+            </span>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="e.g. Helen"
+            />
+            <!--TOOLTIP-->
+            <span class="input-group-text bg-altlight">
+              <span
+                data-bs-toggle="tooltip"
+                data-bs-placement="bottom"
+                title="Write your name"
+              >
+                <i class="bi bi-question-circle"></i>
+              </span>
+            </span>
+          </div>
+
+          <label for="subject" class="form-label"
+            >What is your question about?</label
+          >
+          <div class="input-group mb-4">
+            <span class="input-group-text bg-altlight">
+              <i class="bi bi-chat-left-dots-fill"></i>
+            </span>
+            <select class="form-select" id="subject">
+              <option value="pricing" selected>Pricing query</option>
+              <option value="content">Content query</option>
+              <option value="other">Other query</option>
+            </select>
+          </div>
+
+          <div class="form-floating mb-4 mt-5">
+            <textarea
+              id="query"
+              class="form-control"
+              style="height: 140px"
+            ></textarea>
+            <label for="query">Your query...</label>
+          </div>
+          <div class="text-center">
+            <a type="submit" class="btn btn-outline-primary btn-lg" href="#">
+              Submit
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--get updates / modal trigger-->
+    <section class="bg-altlight">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-8 col-md-3 text-center">
+            <a href="#" style="text-decoration: none"
+              ><h2 class="display-5 text-dark">Stay in the Loop</h2></a
+            >
+            <p class="mt-4">
+              Get the latest updates about the publications by Charlotte Joko
+              Beck and her Dharma Successors
+            </p>
+            <button
+              class="btn btn-primary btn-lg mt-5"
+              data-bs-toggle="modal"
+              data-bs-target="#reg-modal"
+            >
+              Register for Updates
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--author of website-->
+    <footer>
+      <div class="container text-center mt-3">
+        <a class="navbar-brand" href="#intro">
+          <span class="text-secondary fw-bold">
+            <img
+              src="assets/lotoflower.png"
+              alt="lotoFlower"
+              style="height: 50px; padding-bottom: 6px"
+            />
+            By vanesascode
+          </span>
+        </a>
+      </div>
+    </footer>
+
+    <!--modal itself-->
+    <!--'tabindex-1' means that you cannot tab it, it takes it out of the tab index-->
+    <div
+      class="modal fade"
+      id="reg-modal"
+      tabindex="-1"
+      aria-labelledby="modal-title"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="modal-title">Subscribe:</h5>
+            <button
+              class="btn-close"
+              type="button"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-floating mb-4">
+              <input type="email" class="form-control" id="modal-email" />
+              <label for="query" class="lead">Your email address...</label>
+            </div>
+            <img
+              src="assets/oldcover.jpg"
+              alt="old cover"
+              style="height: 300px"
+              class="d-block mx-auto mt-3"
+            />
+          </div>
+          <div class="modal-footer justify-content-center">
+            <a href="#" class="btn btn-primary btn-lg" data-bs-dismiss="modal">
+              Submit
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--offcanvas left-->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="sidebar"
+      aria-labelledby="sidebar-label"
+      data-bs-scroll="true"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebar-label">
+          More Books by the author:
+        </h5>
+        <button
+          class="btn-close"
+          type="button"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body text-center">
+        <div>
+          <a
+            class="navbar-brand"
+            href="https://www.amazon.com/Nothing-Special-Charlotte-J-Beck/dp/0062511173/ref=d_pd_sbs_vft_none_sccl_3_1/138-8261178-7143716?pd_rd_w=oz6ZU&content-id=amzn1.sym.3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_p=3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_r=Y69BXGB7HCY31CAH8T32&pd_rd_wg=IMiWw&pd_rd_r=e4a3275c-2543-4f29-975d-384c811eddaf&pd_rd_i=0062511173&psc=1"
+            target="_blank"
+          >
+            <span class="text-primary fw-bold">
+              Nothing Special
+              <img
+                src="assets/nothingspecial.jpg"
+                alt="lotoFlower"
+                style="height: 300px; padding-bottom: 6px"
+                class="d-block mx-auto"
+              />
+            </span>
+          </a>
+        </div>
+        <div class="mt-5">
+          <a
+            class="navbar-brand"
+            href="https://www.amazon.com/Ordinary-Wonder-Zen-Life-Practice/dp/1611808774/ref=d_pd_sbs_vft_none_sccl_3_2/138-8261178-7143716?pd_rd_w=oz6ZU&content-id=amzn1.sym.3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_p=3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_r=Y69BXGB7HCY31CAH8T32&pd_rd_wg=IMiWw&pd_rd_r=e4a3275c-2543-4f29-975d-384c811eddaf&pd_rd_i=1611808774&psc=1"
+            target="_blank"
+          >
+            <span class="text-primary fw-bold">
+              Ordinary Wonder
+              <img
+                src="assets/ordinarywonder.jpg"
+                alt="lotoFlower"
+                style="height: 300px; padding-bottom: 6px"
+                class="d-block mx-auto"
+              />
+            </span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!--offcanvas right-->
+    <div
+      class="offcanvas offcanvas-end"
+      tabindex="-1"
+      id="sidebar2"
+      aria-labelledby="sidebar-label"
+      data-bs-scroll="true"
+    >
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="sidebar-label">Charlotte Joko Beck:</h5>
+        <button
+          class="btn-close"
+          type="button"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <a
+            class="navbar-brand"
+            href="https://www.amazon.com/Nothing-Special-Charlotte-J-Beck/dp/0062511173/ref=d_pd_sbs_vft_none_sccl_3_1/138-8261178-7143716?pd_rd_w=oz6ZU&content-id=amzn1.sym.3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_p=3676f086-9496-4fd7-8490-77cf7f43f846&pf_rd_r=Y69BXGB7HCY31CAH8T32&pd_rd_wg=IMiWw&pd_rd_r=e4a3275c-2543-4f29-975d-384c811eddaf&pd_rd_i=0062511173&psc=1"
+            target="_blank"
+          >
+            <img
+              src="assets/jokobeck.jpg"
+              alt="lotoFlower"
+              style="height: 200px"
+              class="d-block mx-auto"
+            />
+          </a>
+        </div>
+        <div class="mt-3">
+          <p>
+            One of the most influential Western-born Zen teachers, was born in
+            1917 and died June 15, 2011. She began her practice of Zen with
+            Hakuyu Taizan Maezumi Roshi, from whom she received Dharma
+            transmission. She was the founder of the Zen Center of San Diego and
+            the Ordinary Mind Zen School. Through her teachings, and her work as
+            the author of two modern Zen classics: "Everyday Zen: Love and Work"
+            and "Nothing Special: Living Zen", Joko Beck became a visible and
+            widely admired force among the first generation of America's convert
+            Buddhists. Her influence continues through her teachings and through
+            those for whom she was a direct teacher.
+          </p>
+        </div>
+        <!--dropdown-->
+        <div class="dropdown mt-4 mx-auto justify-content-center">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            id="book-dropdown"
+            data-bs-toggle="dropdown"
+          >
+            More resources
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="book-dropdown">
+            <li>
+              <a
+                href="https://www.youtube.com/@jokobeckzen4122"
+                class="dropdown-item"
+                target="_blank"
+                >Youtube Talks</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.zencentersandiego.org/byTeachers/"
+                class="dropdown-item"
+                target="_blank"
+                >San Diego Center</a
+              >
+            </li>
+            <li>
+              <a
+                href="https://www.ordinarymind.eu/"
+                class="dropdown-item"
+                target="_blank"
+                >Europe Center</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      //CODE NEEDED TO MAKE TOOLTIPS WORK:
+
+      const tooltipTriggerList = document.querySelectorAll(
+        '[data-bs-toggle="tooltip"]'
+      );
+      const tooltipList = [...tooltipTriggerList].map(
+        (tooltipTriggerEl) => new bootstrap.Tooltip(tooltipTriggerEl)
+      );
+    </script>
+  </body>
+</html>
